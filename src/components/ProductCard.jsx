@@ -67,7 +67,7 @@ export const ProductCard = ({ id, img, itemName, price }) => {
 
         {/* מחיר */}
         <Typography variant="subtitle2" color="primary">
-          ₪{price}
+          {price} $
         </Typography>
       </div>
       

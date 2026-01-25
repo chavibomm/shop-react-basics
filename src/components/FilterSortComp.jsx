@@ -6,23 +6,11 @@ import {
   MenuItem
 } from "@mui/material";
 
-
-// export const FilterSortComp = (props) => {
-//   const { listOfOptions, label, onSelect } = props;
-
-//   return (
-//     <div className="collection-sort">
-//       <label>{label}</label>
-//       <select onChange={(event) => onSelect(event.target.value)}>
-//         {listOfOptions.map((opt) => (
-//           <option value={opt}>{opt}</option>
-//         ))}
-//       </select>
-//     </div>
-//   );
-// };
-
-export const FilterSortComp = ({ listOfOptions, label, onSelect }) => {
+export const FilterSortComp = ({
+  listOfOptions = [],
+  label,
+  onSelect,
+}) => {
   return (
     <Box sx={{ minWidth: 200 }}>
       <FormControl fullWidth size="small">

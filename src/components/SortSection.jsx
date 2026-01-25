@@ -1,31 +1,47 @@
 import { useContext } from "react";
 import { ShopContext } from "../ShopContext";
 import { FilterSortComp } from "./FilterSortComp";
-import { Box, Stack, Typography } from "@mui/material";
+import {  Stack } from "@mui/material";
+import { PriceSlider } from "./PriceSlider";
 
-export const SortSection = () => {
-  const { categories, handleCatChange, handleSortChange } =
-    useContext(ShopContext);
+export const SortSection = ({
+  categories,
+  minPrice,
+  maxPrice,
+  priceRange,
+  setPriceRange,
+}) => {
+  const {
+    setSelectedCategory,
+    setSortOption,
+  } = useContext(ShopContext);
 
-  const sortOptions = [
-    "Alphabetically, A-Z",
-    "Alphabetically, Z-A",
-    "Price, low to high",
-    "Price, high to low",
-  ];
+const sortOptions = [
+  "Price: Low to High",
+  "Price: High to Low",
+  "Alphabetical: A–Z",
+  "Alphabetical: Z–A",
+];
 
   return (
     <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
       <FilterSortComp
-        onSelect={handleCatChange}
-        label="Filter by"
+        label="Filter by:"
         listOfOptions={categories}
+        onSelect={setSelectedCategory}
       />
 
       <FilterSortComp
-        onSelect={handleSortChange}
-        label="Sort by"
+        label="Sort by:"
         listOfOptions={sortOptions}
+        onSelect={setSortOption}
+      />
+
+      <PriceSlider
+        min={minPrice}
+        max={maxPrice}
+        value={priceRange}
+        onChange={setPriceRange}
       />
     </Stack>
   );
