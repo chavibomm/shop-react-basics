@@ -14,7 +14,9 @@ export const useProducts = () => {
   console.log({ selectedCategory, priceRange, sortOption });
 
   return useQuery({
-    queryKey: ["all-products", selectedCategory, priceRange, sortOption],
+        queryKey: ["all-products"],
+
+    // queryKey: ["all-products", selectedCategory, priceRange, sortOption],
     queryFn: handleProducts,
     select: (data) =>
       transformProducts(data, {

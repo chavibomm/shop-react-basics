@@ -9,50 +9,7 @@ import { useProducts } from "../../hooks/useProducts";
 import { FilterSortComp } from "./FilterSortComp";
 import { useAllProducts } from "../../hooks/useAllProducts";
 
-// export const NavSection = () => {
-//   const [openCart, setOpenCart] = useState(false);
 
-//   const { minPrice, maxPrice, priceRange, handlePriceChange } =
-//     useContext(ShopContext);
-
-//   return (
-//     <>
-//       {/* 🔹 HEADER */}
-//      <Box
-//   display="flex"
-//   alignItems="center"
-//   justifyContent="space-between"
-//   px={3}
-//   py={0}   // 👈 אין padding אנכי
-// >
-//   <Typography variant="h4"  sx={{ mt: 3, mb: 0 }}>
-//     Products
-//   </Typography>
-
-//   <IconButton onClick={() => setOpenCart(true)}>
-//     <ShoppingCartIcon />
-//   </IconButton>
-// </Box>
-
-//       {/* 🔹 NAV / FILTERS */}
-//       <nav className="product-filter">
-//         <PriceSlider
-//           min={minPrice}
-//           max={maxPrice}
-//           value={priceRange}
-//           onChange={handlePriceChange}
-//         />
-
-//         <SortSection />
-//       </nav>
-
-//       {/* 🔹 DRAWER */}
-//       <Drawer anchor="left" open={openCart} onClose={() => setOpenCart(false)}>
-//         <CartDrawer />
-//       </Drawer>
-//     </>
-//   );
-// };
 
 export const NavSection = () => {
   const [openCart, setOpenCart] = useState(false);
@@ -60,12 +17,16 @@ export const NavSection = () => {
   const { priceRange, setPriceRange } = useContext(ShopContext);
 
   const { data: allProducts = [] } = useAllProducts();
+    // const { data: allProducts = [] } = useProducts();
 
-  // קטגוריות – תמיד מכל המוצרים
-  const categories = useMemo(() => {
-    const unique = [...new Set(allProducts.map((p) => p.category))];
-    return ["All Items", ...unique];
-  }, [allProducts]);
+
+    const categories = [
+    "All Items",
+    ...new Set(allProducts.map((p) => p.category)),
+  ];
+
+
+
 
   // טווח מחירים – מכל המוצרים
   const prices = allProducts.map((p) => p.price);
