@@ -1,6 +1,9 @@
 import { Slider } from "@mui/material";
 
 export const PriceSlider = ({ min, max, value, onChange }) => {
+
+
+
   return (
     <div className="price-slider">
       <p>

@@ -11,7 +11,7 @@ import { ProductModal } from "../components/ProductModal";
 import { useAllProducts } from "../../hooks/useAllProducts";
 
 const AdminPage = () => {
-  // 🔹 כל המוצרים מהשרת (TanStack)
+  //  כל המוצרים מהשרת (TanStack)
   const {
     data: products = [],
     isLoading,

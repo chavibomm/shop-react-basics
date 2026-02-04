@@ -1,6 +1,3 @@
-
-
-
 import { createBrowserRouter, RouterProvider } from "react-router";
 import { useState } from "react";
 import { ShopContext } from "./ShopContext";
@@ -10,10 +7,10 @@ import ProductDetails from "./Pages/ProductDetails";
 import AdminPage from "./Pages/AdminPage";
 
 export const Router = () => {
-  // 🛒 cart
+  //  cart
   const [cart, setCart] = useState({});
 
-  // 🔎 filters / sort
+  //  filters / sort
   const [selectedCategory, setSelectedCategory] = useState("All Items");
   const [priceRange, setPriceRange] = useState([0, Infinity]);
   const [sortOption, setSortOption] = useState("");

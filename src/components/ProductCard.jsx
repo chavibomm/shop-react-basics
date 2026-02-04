@@ -2,12 +2,8 @@ import { useContext } from "react";
 import { ShopContext } from "../ShopContext";
 import { useNavigate } from "react-router";
 import {
-  Card,
-  CardContent,
-  CardMedia,
   Typography,
   IconButton,
-  Box
 } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";

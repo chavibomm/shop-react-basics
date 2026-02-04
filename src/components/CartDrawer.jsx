@@ -4,8 +4,12 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { ShopContext } from "../ShopContext";
 import { useAllProducts } from "../../hooks/useAllProducts";
+import { useNavigate } from "react-router";
+
 
 export const CartDrawer = () => {
+  const navigate = useNavigate();
+
   const { cart, addOne, removeOne } = useContext(ShopContext);
 
   // 🔹 כל המוצרים מהשרת (לא מסוננים!)
@@ -39,8 +43,16 @@ export const CartDrawer = () => {
           p={1}
           border="1px solid #ddd"
           borderRadius={2}
+          onClick={() => navigate(`/products/${item.id}`)}
+
         >
-          <img src={item.image} width={60} />
+          <img
+            src={item.image || "/placeholder.png"}
+            style={{
+              width: 60,
+              objectFit: "contain",
+            }}
+          />
 
           <Box flex={1}>
             <Typography variant="body1">{item.title}</Typography>
@@ -50,13 +62,22 @@ export const CartDrawer = () => {
             </Typography>
 
             <Box display="flex" alignItems="center">
-              <IconButton onClick={() => removeOne(item.id)}>
+              <IconButton onClick={(e) =>{ 
+                 e.stopPropagation();
+                removeOne(item.id)
+
+              }}
+                >
                 <RemoveIcon />
               </IconButton>
 
               <Typography>{item.quantity}</Typography>
 
-              <IconButton onClick={() => addOne(item.id)}>
+              <IconButton onClick={(e) => {
+              e.stopPropagation();
+                addOne(item.id)
+              }}
+                >
                 <AddIcon />
               </IconButton>
             </Box>
