@@ -12,7 +12,7 @@ import EditIcon from "@mui/icons-material/Edit";
 export const ProductsTable = ({ products, onEdit }) => {
   const handleDelete = async (id) => {
     await fetch(
-      `https://products-server-haxv.onrender.com/products/product/${id}`,
+      `https://products-server-haxv.onrender.com/api/products/product/${id}`,
       {
         method: "DELETE",
       },

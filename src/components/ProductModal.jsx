@@ -73,8 +73,8 @@ export const ProductModal = ({ open, onClose, product }) => {
       };
 
       const url = isEdit
-        ? `https://products-server-haxv.onrender.com/products/product/${product.id}`
-        : `https://products-server-haxv.onrender.com/products`;
+        ? `https://products-server-haxv.onrender.com/api/products/product/${product.id}`
+        : `https://products-server-haxv.onrender.com/api/products`;
 
       const method = isEdit ? "PUT" : "POST";
 
