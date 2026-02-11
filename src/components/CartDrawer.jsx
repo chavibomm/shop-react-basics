@@ -3,7 +3,7 @@ import { Box, Typography, IconButton, Button, Divider } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { ShopContext } from "../ShopContext";
-import { useAllProducts } from "../../hooks/useAllProducts";
+import { useAllProducts } from "../hooks/useAllProducts";
 import { useNavigate } from "react-router";
 
 

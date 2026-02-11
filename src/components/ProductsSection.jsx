@@ -1,4 +1,4 @@
-import { useProducts } from "../../hooks/useProducts.js";
+import { useProducts } from "../hooks/useProducts.js";
 import { ProductCard } from "./ProductCard";
 
 export const ProductsSection = () => {

@@ -4,7 +4,7 @@ import { ShopContext } from "../ShopContext";
 import { Box, Typography, IconButton, Drawer, Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { CartDrawer } from "./CartDrawer";
-import { useAllProducts } from "../../hooks/useAllProducts";
+import { useAllProducts } from "../hooks/useAllProducts";
 import { useNavigate } from "react-router";
 
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";

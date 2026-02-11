@@ -8,7 +8,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 import { ProductsTable } from "../components/ProductsTable";
 import { ProductModal } from "../components/ProductModal";
-import { useAllProducts } from "../../hooks/useAllProducts";
+import { useAllProducts } from "../hooks/useAllProducts";
 
 const AdminPage = () => {
   //  כל המוצרים מהשרת (TanStack)

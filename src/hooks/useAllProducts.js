@@ -1,6 +1,6 @@
 // hooks/useAllProducts.js
 import { useQuery } from "@tanstack/react-query";
-import { handleProducts } from "../src/api/products-functions";
+import { handleProducts } from "../api/products-functions";
 
 export const useAllProducts = () => {
   return useQuery({

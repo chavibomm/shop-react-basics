@@ -13,7 +13,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useAllProducts } from "../../hooks/useAllProducts";
+import { useAllProducts } from "../hooks/useAllProducts";
 
 export const ProductModal = ({ open, onClose, product }) => {
   const isEdit = Boolean(product);

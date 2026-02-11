@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { transformProducts } from "../utils/product-utils";
+import { transformProducts } from "../../utils/product-utils";
 import { useContext } from "react";
-import { handleProducts } from "../src/api/products-functions";
-import { ShopContext } from "../src/ShopContext";
+import { handleProducts } from "../api/products-functions";
+import { ShopContext } from "../ShopContext";
 
 export const useProducts = () => {
   const {
