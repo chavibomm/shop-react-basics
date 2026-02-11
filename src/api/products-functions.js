@@ -1,5 +1,5 @@
 export const handleProducts = async () => {
-  const response = await fetch("https://products-server-haxv.onrender.com/products");
+  const response = await fetch("https://products-server-haxv.onrender.com/api/products");
 
   if (!response.ok) {
     throw new Error("Failed to fetch products");
@@ -16,7 +16,7 @@ export const handleProducts = async () => {
 
 export const fetchSingleProduct = async (id) => {
   const response = await fetch(
-    `https://products-server-haxv.onrender.com/products/product/${id}`
+    `https://products-server-haxv.onrender.com/api/products/product/${id}`
   );
 
   if (!response.ok) {
